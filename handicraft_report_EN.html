@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Vietnam Bamboo &amp; Rattan Handicraft Export Analysis Report 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+    :root {
+      --p: #002B5B; --s: #1F75FE; --g: #D4A017; --bg: #F8F9FA; --text: #2C3E50;
+      --sidebar-bg: #07162C; --card-bg: #FFFFFF; --sw: 260px; --border-radius: 12px; --transition: all 0.3s ease;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { overflow-x: hidden; max-width: 100vw; scroll-behavior: smooth; }
+    body { font-family: 'Lexend', sans-serif; background-color: var(--bg); color: var(--text); line-height: 1.6; }
+    img { max-width: 100%; height: auto; }
+    canvas { max-width: 100% !important; display: block; margin: 0 auto; }
+    .sidebar { position: fixed; top: 0; left: 0; width: var(--sw); height: 100vh; background: linear-gradient(180deg, var(--sidebar-bg) 0%, var(--p) 100%); color: #fff; padding: 2rem 1.5rem; overflow-y: auto; z-index: 100; box-shadow: 4px 0 15px rgba(0,0,0,0.1); }
+    .brand { display: flex; align-items: center; gap: 10px; font-size: 1.25rem; font-weight: 700; margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .brand i { color: var(--g); }
+    .sidebar nav ul { list-style: none; }
+    .sidebar nav ul li { margin-bottom: 0.5rem; }
+    .sidebar nav ul li a { display: flex; align-items: center; gap: 12px; color: rgba(255,255,255,0.8); text-decoration: none; padding: 0.75rem 1rem; border-radius: var(--border-radius); font-size: 0.95rem; font-weight: 600; transition: var(--transition); }
+    .sidebar nav ul li a:hover, .sidebar nav ul li a.active { color: #fff; background-color: rgba(255,255,255,0.06); border-left: 4px solid var(--g); }
+    .main-content { margin-left: var(--sw); width: calc(100% - var(--sw)); padding: 2.5rem 3rem; max-width: 1400px; position: relative; }
+    .header-banner { background: linear-gradient(135deg, rgba(7, 22, 44, 0.9) 0%, rgba(0, 43, 91, 0.75) 100%), url('https://images.unsplash.com/photo-1615873968403-89e068629275?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80') no-repeat center center; background-size: cover; padding: 4rem 2.5rem; border-radius: var(--border-radius); position: relative; margin-bottom: 2rem; box-shadow: 0 8px 25px rgba(0,43,91,0.15); min-height: 280px; display: flex; flex-direction: column; justify-content: center; }
+    .badge { display: inline-block; background-color: var(--g); color: #07162C; font-weight: 700; font-size: 0.75rem; text-transform: uppercase; padding: 0.35rem 0.9rem; border-radius: 50px; margin-bottom: 1rem; width: fit-content; }
+    .title { font-size: 2.3rem; font-weight: 800; margin-bottom: 0.5rem; line-height: 1.3; color: #fff; }
+    .meta { display: flex; flex-wrap: wrap; gap: 20px; font-size: 0.85rem; color: rgba(255,255,255,0.9); border-top: 1px solid rgba(255,255,255,0.2); padding-top: 1rem; margin-top: 1.5rem; }
+    .section-card { background-color: var(--card-bg); border-radius: var(--border-radius); padding: 2.5rem; margin-bottom: 2rem; box-shadow: 0 4px 20px rgba(0,0,0,0.02); border: 1px solid rgba(0,0,0,0.02); width: 100%; }
+    .section-title { font-size: 1.4rem; font-weight: 700; color: var(--p); margin-bottom: 1.25rem; display: flex; align-items: center; gap: 10px; border-bottom: 2px solid var(--bg); padding-bottom: 0.75rem; }
+    .section-title i { color: var(--g); }
+    .sub-title { font-size: 1.15rem; font-weight: 700; color: var(--p); margin: 2rem 0 1rem 0; border-left: 4px solid var(--g); padding-left: 10px; }
+    p { margin-bottom: 1rem; color: #576574; }
+    .highlight { background-color: #F0F4F8; border-left: 4px solid var(--s); padding: 1rem 1.25rem; border-radius: 0 var(--border-radius) var(--border-radius) 0; margin-bottom: 1.25rem; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem; width: 100%; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 1.5rem; width: 100%; }
+    .info-card { background-color: var(--bg); border-radius: var(--border-radius); padding: 1.5rem; border: 1px solid rgba(0,0,0,0.04); transition: var(--transition); }
+    .info-val { font-size: 1.6rem; font-weight: 800; color: var(--p); }
+    .info-lbl { font-size: 0.85rem; font-weight: 600; color: var(--s); margin-top: 0.35rem; }
+    table { width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; font-size: 0.85rem; }
+    table th { background-color: var(--p); color: #fff; font-weight: 600; text-align: left; padding: 0.8rem 1rem; border: 1px solid rgba(0,0,0,0.05); }
+    table td { padding: 0.8rem 1rem; border: 1px solid rgba(0,0,0,0.05); vertical-align: middle; }
+    table tr:nth-child(even) { background-color: #F8FAFC; }
+    .table-container { overflow-x: auto; margin-top: 1rem; border-radius: 8px; border: 1px solid rgba(0,0,0,0.08); width: 100%; }
+    .link-store-btn { display: inline-flex; align-items: center; justify-content: center; background-color: #8B4513; color: white !important; padding: 0.5rem 0.8rem; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 0.75rem; white-space: nowrap; }
+    /* CHARTS - POLISHED LAYOUT */
+    .market-chart-grid { 
+      display: grid; 
+      grid-template-columns: minmax(360px, 0.9fr) minmax(480px, 1.1fr); 
+      gap: 1.5rem; 
+      margin: 1.5rem 0 2rem; 
+      align-items: stretch; 
+    }
+    .chart-box { 
+      background: linear-gradient(180deg, #FFFFFF 0%, #FBFCFF 100%);
+      border: 1px solid rgba(0,43,91,0.08); 
+      border-radius: 18px; 
+      padding: 1.5rem 1.5rem 1.1rem; 
+      width: 100%; 
+      min-height: 430px; 
+      position: relative; 
+      box-shadow: 0 12px 30px rgba(0,43,91,0.06); 
+      overflow: hidden;
+    }
+    .chart-box::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 5px;
+      background: linear-gradient(90deg, var(--g), var(--s));
+    }
+    .chart-box canvas { width: 100% !important; height: 330px !important; }
+    .chart-box.wide { min-height: 420px; margin-top: 1.2rem; }
+    .chart-box.wide canvas { height: 320px !important; }
+    .chart-insight {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+      margin-bottom: 1.2rem;
+    }
+    .insight-pill {
+      background: #F4F7FB;
+      border: 1px solid rgba(0,43,91,0.06);
+      border-radius: 12px;
+      padding: 0.9rem 1rem;
+    }
+    .insight-pill strong { display: block; font-size: 1.35rem; color: var(--p); line-height: 1.1; }
+    .insight-pill span { font-size: 0.78rem; color: #6B7280; font-weight: 600; }
+    .pricing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin: 1.2rem 0 1.5rem; }
+    .potential-box { background: #FFF8E5; border: 1px solid rgba(212,160,23,0.25); border-left: 5px solid var(--g); border-radius: 14px; padding: 1.2rem 1.4rem; }
+    .potential-box h4 { color: var(--p); margin-bottom: 0.55rem; font-size: 1rem; }
+    .potential-box p { margin-bottom: 0; font-size: 0.9rem; }
+    /* RFQ & Personas */
+    .rfq-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 1.5rem; }
+    .rfq-card { background-color: var(--card-bg); border-radius: var(--border-radius); padding: 1.5rem; border: 1px solid rgba(0,0,0,0.06); border-top: 4px solid var(--g); box-shadow: 0 4px 12px rgba(0,0,0,0.04); transition: all 0.3s ease; display: flex; flex-direction: column; gap: 0.8rem; }
+    .rfq-title { font-size: 1.05rem; font-weight: 700; color: var(--p); line-height: 1.4; }
+    .rfq-desc { font-size: 0.88rem; color: #576574; line-height: 1.6; word-wrap: break-word; text-align: justify; }
+    .rfq-img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; border: 1px solid rgba(0,0,0,0.06); }
+    .persona-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 1.5rem; }
+    .persona-card { background-color: #F8F9FA; padding: 1.8rem; border-radius: 12px; border-top: 4px solid var(--s); box-shadow: 0 2px 8px rgba(0,0,0,0.02); }
+    .persona-card h4 { color: var(--p); margin-bottom: 1rem; font-size: 1.1rem; }
+    .persona-card ul { list-style: none; padding-left: 0; font-size: 0.85rem; color: #576574; }
+    .persona-card li { margin-bottom: 0.6rem; display: flex; align-items: flex-start; gap: 8px; }
+    .persona-card li::before { content: '✔'; color: var(--s); font-weight: bold; }
+    footer { background-color: var(--sidebar-bg); color: #fff; padding: 3.5rem 2.5rem 2rem 2.5rem; border-radius: var(--border-radius) var(--border-radius) 0 0; margin-top: 4rem; }
+    .footer-contact { text-align: center; padding-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 1.5rem; }
+    .foot-bottom { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; font-size: 0.8rem; color: rgba(255,255,255,0.5); padding-top: 1rem; }
+
+    .strategy-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin: 1.5rem 0 1.75rem; }
+    .strategy-card { background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%); border: 1px solid rgba(0,43,91,0.08); border-radius: 14px; padding: 1.25rem; box-shadow: 0 6px 18px rgba(0,0,0,0.035); }
+    .strategy-no { display:inline-flex; align-items:center; justify-content:center; width:34px; height:34px; border-radius:50%; background: rgba(31,117,254,0.10); color: var(--s); font-weight:800; font-size:0.82rem; margin-bottom:0.75rem; }
+    .strategy-card h4 { color: var(--p); font-size: 1rem; margin-bottom: 0.55rem; }
+    .strategy-card p { font-size: 0.86rem; margin-bottom: 0; color: #576574; }
+    .strategy-highlight { margin-top: 0.5rem; }
+    .research-notes { margin-top: 2rem; padding: 1.6rem; background: #F0F4F8; border-left: 4px solid var(--p); border-radius: 12px; }
+    .research-notes h3 { color: var(--p); font-size: 1.08rem; margin-bottom: 1rem; display:flex; align-items:center; gap:8px; }
+    .source-table a { color: var(--s); font-weight: 700; text-decoration: none; }
+    .source-table a:hover { text-decoration: underline; }
+    footer { background: linear-gradient(135deg, #07162C 0%, #002B5B 100%); color: #fff; padding: 2.2rem; border-radius: 18px 18px 0 0; margin-top: 4rem; box-shadow: 0 -8px 24px rgba(0,0,0,0.08); }
+    .footer-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 2rem; align-items: stretch; }
+    .footer-logo { display:flex; align-items:center; gap:10px; font-size:1.25rem; font-weight:800; margin-bottom:0.8rem; }
+    .footer-logo i { color: var(--g); }
+    .footer-brand-block p { color: rgba(255,255,255,0.72); max-width: 540px; margin-bottom:0; }
+    .footer-contact-card { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); border-radius: 14px; padding: 1.3rem; }
+    .footer-contact-card h3 { font-size: 1rem; margin-bottom:0.35rem; color:#fff; }
+    .fc-name { font-size:1.25rem; font-weight:800; color:#fff; margin-bottom:0.9rem; }
+    .footer-action { display:flex; align-items:center; gap:10px; color:#fff !important; text-decoration:none; padding:0.72rem 0; border-top:1px solid rgba(255,255,255,0.10); word-break: break-word; }
+    .footer-action i { color: var(--g); width: 18px; }
+    .footer-action:hover span { text-decoration: underline; }
+    @media (max-width: 1100px) { .main-content { padding: 2rem; } .grid-2, .grid-3, .market-chart-grid, .pricing-grid { grid-template-columns: 1fr; } .chart-box { min-height: 390px; } .chart-insight { grid-template-columns: 1fr; } }
+    @media (max-width: 720px) { .main-content { margin-left: 0; width: 100%; padding: 1rem; } .sidebar { position: relative; width: 100%; height: auto; display: flex; flex-direction: column; padding: 12px; } .sidebar nav ul { display: flex; flex-direction: row; gap: 8px; overflow: auto; } .rfq-grid, .persona-grid, .strategy-grid { grid-template-columns: 1fr; } footer { padding:1.4rem; } }
+  </style>
+</head>
+<body>
+<div class="sidebar">
+<div class="brand"><i class="fa-solid fa-leaf"></i> <span>B2B Market Report</span></div>
+<nav>
+<ul>
+<li><a class="active" href="#sec1"><i class="fa-solid fa-flag"></i> Chapter 1: Executive Summary</a></li>
+<li><a href="#sec2"><i class="fa-solid fa-globe"></i> Chapter 2: Global Market Overview 2026</a></li>
+<li><a href="#sec3"><i class="fa-solid fa-warehouse"></i> Chapter 3: Vietnam Supplier Landscape</a></li>
+<li><a href="#sec4"><i class="fa-solid fa-award"></i> Chapter 4: Top-Selling Products</a></li>
+<li><a href="#sec5"><i class="fa-solid fa-clipboard-list"></i> Chapter 5: Buyer RFQ Requests</a></li>
+<li><a href="#sec6"><i class="fa-solid fa-magnifying-glass"></i> Chapter 6: Buyer Personas &amp; Image Analysis</a></li>
+<li><a href="#sec7"><i class="fa-solid fa-tags"></i> Chapter 7: Pricing Intelligence</a></li>
+<li><a href="#sec8"><i class="fa-solid fa-rocket"></i> Chapter 8: Strategy &amp; Research Notes</a></li>
+</ul>
+</nav>
+</div>
+<div class="main-content">
+<div class="header-banner">
+<span class="badge">2026 Export Report - Official Version</span>
+<h1 class="title">VIETNAM BAMBOO &amp; RATTAN HANDICRAFT EXPORT ANALYSIS REPORT 2026</h1>
+<p style="color: rgba(255,255,255,0.95); font-size: 1.1rem; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">Real 2026 data. A practical view of Vietnam’s position on the global export map.</p>
+<div class="meta">
+<span><i class="fa-solid fa-user-tie"></i> Prepared by: <strong>Amy Đỗ</strong></span>
+<span><i class="fa-solid fa-calendar-days"></i> Updated: <strong>July 6, 2026</strong></span>
+</div>
+</div>
+ CHAPTER 1 
+<div class="section-card" id="sec1">
+<h2 class="section-title"><i class="fa-solid fa-flag"></i> Chapter 1: Executive Summary</h2>
+<div class="grid-3">
+<div class="info-card"><div class="info-val">$415M</div><div class="info-lbl">Exports in the first 5 months of 2026 (+12.1%)</div></div>
+<div class="info-card"><div class="info-val">8.5%</div><div class="info-lbl">Vietnam’s global market share</div></div>
+<div class="info-card"><div class="info-val">$1.1B+</div><div class="info-lbl">Forecast full-year export value 2026</div></div>
+</div>
+<div class="highlight">
+        2026 is a breakout year for Vietnam’s bamboo and rattan handicraft sector. In the first five months, Vietnam generated more than **USD 415 million** from exports of bamboo, rattan, sedge and carpet products. With steady double-digit growth, Vietnam now holds around **8.5% of the global bamboo and rattan market**, reinforcing its strong competitiveness in the region.
+      </div>
+<p>Key markets such as **the United States (36.2%)** and **the Netherlands (10.5%)** are increasing imports of Vietnamese handicrafts thanks to creative design, reliable craftsmanship and the ability to meet updated sustainability requirements such as FSC standards <a class="citation" href="https://giaothuong.congthuong.vn/xuat-khau-may-tre-dan-khoi-sac-doanh-nghiep-don-song-xanh-toan-cau-407002.html" target="_blank">[Source: Industry &amp; Trade 2026]</a>.</p>
+</div>
+ CHAPTER 2 
+<div class="section-card" id="sec2">
+<h2 class="section-title"><i class="fa-solid fa-globe"></i> Chapter 2: Global Market Overview 2026</h2>
+<div class="chart-insight">
+<div class="insight-pill"><strong>58.5%</strong><span>China leads the global share</span></div>
+<div class="insight-pill"><strong>8.5%</strong><span>Vietnam is among the top suppliers</span></div>
+<div class="insight-pill"><strong>$1.1B+</strong><span>Vietnam export forecast 2026</span></div>
+</div>
+<div class="market-chart-grid">
+<div class="chart-box"><canvas id="shareChart"></canvas></div>
+<div class="chart-box"><canvas id="growthChart"></canvas></div>
+</div>
+<h3 class="sub-title">Top 5 Exporting Countries (2026)</h3>
+<div class="table-container">
+<table>
+<thead><tr><th>#</th><th>Country</th><th>Export Value / Share</th><th>Core Strength</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>China</td><td>~58.5%</td><td>Industrial scale and consistent bamboo engineered products</td></tr>
+<tr><td>2</td><td>Vietnam</td><td>~8.5%</td><td>Fine hand-weaving skills and long-established craft villages</td></tr>
+<tr><td>3</td><td>Indonesia</td><td>~5.2%</td><td>Abundant natural rattan supply</td></tr>
+<tr><td>4</td><td>Philippines</td><td>~2.1%</td><td>Premium decor design and higher-value items</td></tr>
+<tr><td>5</td><td>India</td><td>~1.8%</td><td>Bamboo/rattan products combined with textile craftsmanship</td></tr>
+</tbody>
+</table>
+</div>
+<div class="chart-box wide"><canvas id="exportCountriesChart"></canvas></div>
+<h3 class="sub-title">Vietnam’s Key Import Markets (2026)</h3>
+<div class="table-container">
+<table>
+<thead><tr><th>#</th><th>Market</th><th>Share</th><th>2026 Trend</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>United States</td><td>36.2%</td><td>Smart storage baskets and bamboo homeware</td></tr>
+<tr><td>2</td><td>Netherlands (EU)</td><td>10.5%</td><td>Sustainable and carbon-conscious products</td></tr>
+<tr><td>3</td><td>Germany</td><td>8.3%</td><td>Minimalist Scandinavian-style bamboo/rattan lamps</td></tr>
+<tr><td>4</td><td>Japan</td><td>7.1%</td><td>Coconut bowls and compact rattan trays for apartments</td></tr>
+<tr><td>5</td><td>United Kingdom</td><td>5.4%</td><td>Garden decor and natural rattan/sedge mats</td></tr>
+</tbody>
+</table>
+</div>
+<div class="chart-box wide"><canvas id="importCountriesChart"></canvas></div>
+</div>
+ CHAPTER 3 
+<div class="section-card" id="sec3">
+<h2 class="section-title"><i class="fa-solid fa-warehouse"></i> Chapter 3: Vietnam Supplier Landscape</h2>
+<div class="table-container">
+<table>
+<thead>
+<tr><th style="width: 40px;">No.</th><th>Company Name</th><th>Main Products</th><th>Estimated Revenue</th><th>Years on Alibaba</th><th style="width: 90px;">Store</th></tr>
+</thead>
+<tbody>
+<tr><td>1</td><td>THANH CONG HANDICRAFT</td><td>Coconut bowls, rattan trays</td><td>$5M - $10M</td><td>7 năm</td><td><a class="link-store-btn" href="https://thanhcongcraft.trustpass.alibaba.com" target="_blank">View Store</a></td></tr>
+<tr><td>2</td><td>GLOVIMEX CO., LTD</td><td>Storage baskets, lampshades</td><td>$1M - $2.5M</td><td>7 năm</td><td><a class="link-store-btn" href="https://vn1188428656ldxm.trustpass.alibaba.com" target="_blank">View Store</a></td></tr>
+<tr><td>3</td><td>HAN EXIM CO., LTD</td><td>Bamboo/rattan baskets, trays</td><td>$1M - $2.5M</td><td>6 năm</td><td><a class="link-store-btn" href="https://vn1540662850nwoh.trustpass.alibaba.com" target="_blank">View Store</a></td></tr>
+<tr><td>4</td><td>INDOCHINA CREATIVE JSC</td><td>Multi-purpose baskets, decor</td><td>$2.5M - $5M</td><td>11 năm</td><td><a class="link-store-btn" href="https://indochinajscvietnam.trustpass.alibaba.com" target="_blank">View Store</a></td></tr>
+<tr><td>5</td><td>LAC VIET HANDICRAFT</td><td>Woven decor items</td><td>$1M - $2.5M</td><td>11 năm</td><td><a class="link-store-btn" href="https://lavihex.trustpass.alibaba.com" target="_blank">View Store</a></td></tr>
+<tr><td>6</td><td>M.I.T VIET NAM CO., LTD</td><td>Bamboo, rattan and sedge products</td><td>$1M - $2.5M</td><td>6 năm</td><td><a class="link-store-btn" href="https://mitvietnam.trustpass.alibaba.com" target="_blank">View Store</a></td></tr>
+<tr><td>7</td><td>99 GOLD DATA</td><td>Rattan materials</td><td>Below $1M</td><td>8 năm</td><td><a class="link-store-btn" href="https://99golddata.trustpass.alibaba.com" target="_blank">View Store</a></td></tr>
+<tr><td>8</td><td>TRUNG HOA BAMBOO RATTAN</td><td>Rattan decorative lamps</td><td>$1M - $2.5M</td><td>6 năm</td><td><a class="link-store-btn" href="https://trunghoabamboo.trustpass.alibaba.com" target="_blank">View Store</a></td></tr>
+<tr><td>9</td><td>SISU HANDICRAFT CO., LTD</td><td>Water hyacinth products</td><td>$1M - $2.5M</td><td>6 năm</td><td><a class="link-store-btn" href="https://sisu.trustpass.alibaba.com" target="_blank">View Store</a></td></tr>
+<tr><td>10</td><td>VINACRAFT JOINT STOCK CO</td><td>Bamboo handicrafts</td><td>$1M - $2.5M</td><td>20 năm</td><td><a class="link-store-btn" href="https://vinacraft.trustpass.alibaba.com" target="_blank">View Store</a></td></tr>
+</tbody>
+</table>
+</div>
+</div>
+ CHAPTER 4 
+<div class="section-card" id="sec4">
+<h2 class="section-title"><i class="fa-solid fa-award"></i> Chapter 4: Top-Selling Products</h2>
+<div class="table-container">
+<table>
+<thead>
+<tr><th style="width: 40px;">#</th><th style="width: 65px;">Image</th><th>Product Name</th><th>FOB Export Price (USD)</th><th>MOQ</th><th style="width: 90px;">Link</th></tr>
+</thead>
+<tbody>
+<tr><td>1</td><td><img src="https://s.alicdn.com/@sc04/kf/Aeeeb4d8ef1b44796a0446da18d9986ac1.jpg_640x640.jpg"/></td><td>Attractive Bamboo Basket</td><td>$5.89-9.68</td><td>50 pcs</td><td><a class="link-store-btn" href="https://www.alibaba.com/product-detail/_11000004154563.html" target="_blank">View Details</a></td></tr>
+<tr><td>2</td><td><img src="https://s.alicdn.com/@sc04/kf/A514f116215854eddad8e450277d9cbea5.png_640x640.png"/></td><td>Seagrass Handbag Fashion</td><td>$6.00-8.00</td><td>100 pcs</td><td><a class="link-store-btn" href="https://www.alibaba.com/product-detail/_10000020545751.html" target="_blank">View Details</a></td></tr>
+<tr><td>3</td><td><img src="https://s.alicdn.com/@sc04/kf/A95b149b9df70464e992ddcca491fa9a3F.jpg_640x640.jpg"/></td><td>Bamboo Laundry Basket</td><td>$2.89-4.15</td><td>50 pcs</td><td><a class="link-store-btn" href="https://www.alibaba.com/product-detail/_10000034716116.html" target="_blank">View Details</a></td></tr>
+<tr><td>4</td><td><img src="https://s.alicdn.com/@sc04/kf/Aaa29639ddf3549a2ac8e780072bf0306H.png_640x640.png"/></td><td>Rattan Fruit Basket</td><td>$1.99-5.99</td><td>500 pcs</td><td><a class="link-store-btn" href="https://www.alibaba.com/product-detail/_11000010964322.html" target="_blank">View Details</a></td></tr>
+<tr><td>5</td><td><img src="https://s.alicdn.com/@sc04/kf/H4bf50c6e591a434aa51cb3f5d44b4c06C.png_640x640.png"/></td><td>Bamboo Lampshade Rustic</td><td>$4.50-6.00</td><td>50 pcs</td><td><a class="link-store-btn" href="https://www.alibaba.com/product-detail/_1601298681405.html" target="_blank">View Details</a></td></tr>
+<tr><td>6</td><td><img src="https://s.alicdn.com/@sc04/kf/A2d4620301e014b88be95a2780f4eca03j.jpg_640x640.jpg"/></td><td>Vietnam Rattan Pendant</td><td>$5.80-13.60</td><td>50 pcs</td><td><a class="link-store-btn" href="https://www.alibaba.com/product-detail/_10000000135268.html" target="_blank">View Details</a></td></tr>
+<tr><td>7</td><td><img src="https://s.alicdn.com/@sc04/kf/S6cfcca94f2434cbb95dd54331f463749z.png_640x640.png"/></td><td>Modern Wicker Bamboo</td><td>$7.00-7.80</td><td>50 pcs</td><td><a class="link-store-btn" href="https://www.alibaba.com/product-detail/_10000031297784.html" target="_blank">View Details</a></td></tr>
+<tr><td>8</td><td><img src="https://s.alicdn.com/@sc04/kf/Hdc38e1e4e9ec4337bbc90d71e2be39f6s.jpg_640x640.jpg"/></td><td>Bamboo Storage Basket</td><td>$6.90</td><td>500 pcs</td><td><a class="link-store-btn" href="https://www.alibaba.com/product-detail/_1601585227962.html" target="_blank">View Details</a></td></tr>
+<tr><td>9</td><td><img src="https://s.alicdn.com/@sc04/kf/Ac477dadea0ca413eb46c0b836ea0c30bW.jpg_640x640.jpg"/></td><td>Handcrafted Table Lamp</td><td>$5.00-10.00</td><td>100 pcs</td><td><a class="link-store-btn" href="https://www.alibaba.com/product-detail/_10000032268033.html" target="_blank">View Details</a></td></tr>
+<tr><td>10</td><td><img src="https://s.alicdn.com/@sc04/kf/S7fb84002dfef4b93ba13e799b22ceeb2B.jpeg_640x640.jpeg"/></td><td>Natural Rattan Lighting</td><td>$3.90-10.00</td><td>50 pcs</td><td><a class="link-store-btn" href="https://www.alibaba.com/product-detail/_10000010391048.html" target="_blank">View Details</a></td></tr>
+<tr><td>11</td><td><img src="https://s.alicdn.com/@sc04/kf/A27fc8a4f4ff04b3496ebe15f5b548cb4L.jpg_640x640.jpg"/></td><td>Antique Bamboo Shade</td><td>$6.20-8.50</td><td>50 pcs</td><td><a class="link-store-btn" href="https://www.alibaba.com/product-detail/_11000018874045.html" target="_blank">View Details</a></td></tr>
+<tr><td>12</td><td><img src="https://s.alicdn.com/@sc04/kf/Ac45038340f7945b283abbda347fdf070h.png_640x640.png"/></td><td>Modern Wicker Pendant</td><td>$0.80-2.50</td><td>50 pcs</td><td><a class="link-store-btn" href="https://www.alibaba.com/product-detail/_11000017994291.html" target="_blank">View Details</a></td></tr>
+<tr><td>13</td><td><img src="https://s.alicdn.com/@sc04/kf/A7f28e848c75d4da99c8ecc1c31b7f26bP.jpg_640x640.jpg"/></td><td>Seagrass Pendant Lamp</td><td>$4.10-5.20</td><td>2 pcs</td><td><a class="link-store-btn" href="https://www.alibaba.com/product-detail/_11000016798593.html" target="_blank">View Details</a></td></tr>
+<tr><td>14</td><td><img src="https://s.alicdn.com/@sc04/kf/Ae4d9137abf2046f3946312ccab527c88b.png_640x640.png"/></td><td>Natural Home Decor New</td><td>$3.00-4.00</td><td>2 pcs</td><td><a class="link-store-btn" href="https://www.alibaba.com/product-detail/_10000017721437.html" target="_blank">View Details</a></td></tr>
+<tr><td>15</td><td><img src="https://s.alicdn.com/@sc04/kf/S18f40a3a93e94851875ac9bbbbab3cc1N.png_640x640.png"/></td><td>Modern Large Bamboo</td><td>$6.00</td><td>100 pcs</td><td><a class="link-store-btn" href="https://www.alibaba.com/product-detail/_10000023130467.html" target="_blank">View Details</a></td></tr>
+<tr><td>16</td><td><img src="https://s.alicdn.com/@sc04/kf/H7c9852a9f39d4373a2c01cdbd521b16cD.png_640x640.png"/></td><td>Vietnamese Factory Lamp</td><td>$6.00-6.20</td><td>50 pcs</td><td><a class="link-store-btn" href="https://www.alibaba.com/product-detail/_11000001150516.html" target="_blank">View Details</a></td></tr>
+<tr><td>17</td><td><img src="https://s.alicdn.com/@sc04/kf/A0f5e2f8d935f4f5bb59b75f95e6f6f40c.png_640x640.png"/></td><td>Rattan Bamboo Pendant</td><td>$5.89-8.89</td><td>50 pcs</td><td><a class="link-store-btn" href="https://www.alibaba.com/product-detail/_10000036909185.html" target="_blank">View Details</a></td></tr>
+<tr><td>18</td><td><img src="https://s.alicdn.com/@sc04/kf/A65e95f6469b940bdaba16b993c521999O.jpg_640x640.jpg"/></td><td>Handmade Wicker Shade</td><td>$5.75-6.75</td><td>25 pcs</td><td><a class="link-store-btn" href="https://www.alibaba.com/product-detail/_11000011185978.html" target="_blank">View Details</a></td></tr>
+<tr><td>19</td><td><img src="https://s.alicdn.com/@sc04/kf/A6b64d03b64c34147b3d269ad7a2e22d14.png_640x640.png"/></td><td>Traditional Floor Lamp</td><td>$4.00-5.00</td><td>50 pcs</td><td><a class="link-store-btn" href="https://www.alibaba.com/product-detail/_11000016730459.html" target="_blank">View Details</a></td></tr>
+<tr><td>20</td><td><img src="https://s.alicdn.com/@sc04/kf/Uf61f2d1e38ab4291b87b5b7c2bd7d88c3.jpg_640x640.jpg"/></td><td>High Quality Bamboo Lamp</td><td>$7.00-15.00</td><td>200 pcs</td><td><a class="link-store-btn" href="https://www.alibaba.com/product-detail/_1600124940443.html" target="_blank">View Details</a></td></tr>
+</tbody>
+</table>
+</div>
+</div>
+ CHAPTER 5 
+<div class="section-card" id="sec5">
+<h2 class="section-title"><i class="fa-solid fa-clipboard-list"></i> Chapter 5: Buyer RFQ Requests</h2>
+<div class="rfq-grid">
+<div class="rfq-card"><img class="rfq-img" src="https://s.alicdn.com/@sc04/kf/A95b149b9df70464e992ddcca491fa9a3F.jpg"/><div class="rfq-title">Bulk Folding Bamboo Baskets (USA)</div><p class="rfq-desc">A U.S. buyer is looking for a factory to produce folding bamboo baskets for a retail project. Products must be eco-friendly, FSC-certified and packed efficiently to reduce shipping costs. Quarterly repeat orders are expected if the sample quality meets requirements.</p></div>
+<div class="rfq-card"><img class="rfq-img" src="https://s.alicdn.com/@sc04/kf/H4bf50c6e591a434aa51cb3f5d44b4c06C.png"/><div class="rfq-title">Scandi Bamboo/Rattan Lampshades for the Netherlands</div><p class="rfq-desc">A Dutch importer is seeking a manufacturer for handmade modern bamboo/rattan lampshades. All electrical accessories must meet CE safety standards. Priority is given to Vietnamese factories with OEM capability based on custom technical drawings.</p></div>
+<div class="rfq-card"><img class="rfq-img" src="https://s.alicdn.com/@sc04/kf/A514f116215854eddad8e450277d9cbea5.png"/><div class="rfq-title">Fashion Woven Rattan Bags for France</div><p class="rfq-desc">A Paris fashion brand needs woven bamboo/rattan bags with high-quality canvas lining. The finish must be refined, smooth and scratch-free. Private branding tags are required, and test samples are needed quickly for a summer collection.</p></div>
+<div class="rfq-card"><img class="rfq-img" src="https://s.alicdn.com/@sc04/kf/S53e0b4524d1b4eccae04fc3cf29890674.jpg"/><div class="rfq-title">Rattan Resort Furniture in Australia</div><p class="rfq-desc">A premium resort project in Australia needs natural rattan furniture that can withstand coastal weather. Suppliers must provide ISPM 15 fumigation documents and have experience delivering directly to project sites in Queensland.</p></div>
+<div class="rfq-card"><img class="rfq-img" src="https://s.alicdn.com/@sc04/kf/Aeeeb4d8ef1b44796a0446da18d9986ac1.jpg"/><div class="rfq-title">Premium Dining Rattan Trays (Tokyo)</div><p class="rfq-desc">A Japanese buyer requires tightly woven round rattan trays with an ultra-smooth finish. Products must meet food-contact safety requirements for use in premium restaurants in Tokyo. Strict QC is required before container loading.</p></div>
+<div class="rfq-card"><img class="rfq-img" src="https://s.alicdn.com/@sc04/kf/S18f40a3a93e94851875ac9bbbbab3cc1N.png"/><div class="rfq-title">Bamboo-Framed Wall Mirrors for the UK</div><p class="rfq-desc">A UK home decor retailer is looking for sunflower-style bamboo-framed mirrors. Mail-order packaging is required to prevent breakage during online sales. The quotation should include detailed air sample costs.</p></div>
+<div class="rfq-card"><img class="rfq-img" src="https://s.alicdn.com/@sc04/kf/Hc3a1da5ddc7a4f349cbb3e998aa4e37aT.png"/><div class="rfq-title">Bamboo/Rattan Toy Storage Baskets (Canada)</div><p class="rfq-desc">The buyer is looking for lidded rattan baskets for children with no harmful chemicals used in raw-material processing. The product targets the premium mother-and-baby segment in North America and requires Canadian toy-safety compliance.</p></div>
+<div class="rfq-card"><img class="rfq-img" src="https://s.alicdn.com/@sc04/kf/U1a03cc36f51f4f318a4f1bafefced504j.jpg"/><div class="rfq-title">Premium Sedge Mats for Villas in Dubai</div><p class="rfq-desc">A Dubai client needs large 2m x 3m sedge mats for a villa project. The mats must use carefully selected natural sedge, be fully handwoven, and have strong anti-mold treatment for air-conditioned environments. Roll packing with end protection is required for sea freight.</p></div>
+<div class="rfq-card"><img class="rfq-img" src="https://s.alicdn.com/@sc04/kf/A6b64d03b64c34147b3d269ad7a2e22d14.png"/><div class="rfq-title">Zen-Style Bamboo/Rattan Floor Lamps (Seoul)</div><p class="rfq-desc">A buyer is seeking a partner to produce bamboo/rattan floor lamps for a Zen-style cafe chain in Seoul. The frame must be sturdy, with fine weaving that creates artistic shadows. Cables and plugs must meet Korean 220V standards and electrical safety requirements.</p></div>
+<div class="rfq-card"><img class="rfq-img" src="https://s.alicdn.com/@sc04/kf/Hdc38e1e4e9ec4337bbc90d71e2be39f6s.jpg"/><div class="rfq-title">Compact Mini Rattan Dining Set (Singapore)</div><p class="rfq-desc">A Singapore buyer is looking for a compact rattan dining set for modern apartments. Lightweight yet durable products are preferred. The supplier should support LCL consolidation and delivery to the buyer’s designated warehouse at Jurong Port.</p></div>
+</div>
+</div>
+ CHAPTER 6 
+<div class="section-card" id="sec6">
+<h2 class="section-title"><i class="fa-solid fa-magnifying-glass"></i> Chapter 6: Buyer Personas &amp; Image Analysis</h2>
+<h3 class="sub-title">Buyer Personas 2026</h3>
+<div class="persona-grid">
+<div class="persona-card"><h4>Decor Importer</h4><ul><li>EU, U.S., Australia</li><li>Priority: FSC, green proof</li><li>Premium homeware</li></ul></div>
+<div class="persona-card"><h4>HoReCa Contractor</h4><ul><li>Dubai, Singapore</li><li>Priority: durability and project orders</li><li>Rattan resort furniture</li></ul></div>
+<div class="persona-card"><h4>E-commerce Seller</h4><ul><li>Amazon, Wayfair</li><li>Priority: packaging and visuals</li><li>Lightweight decor products</li></ul></div>
+</div>
+<h3 class="sub-title">Practical Image Analysis</h3>
+<div class="grid-2">
+<div class="img-analysis-card"><img src="https://s.alicdn.com/@sc04/kf/Aeeeb4d8ef1b44796a0446da18d9986ac1.jpg"/><div class="img-analysis-body">Rattan basket: professional lighting highlights the strength and texture of the weave.</div></div>
+<div class="img-analysis-card"><img src="https://s.alicdn.com/@sc04/kf/A2d4620301e014b88be95a2780f4eca03j.jpg"/><div class="img-analysis-body">Rattan lamp: strong lighting effect, attractive for project-based buyers.</div></div>
+</div>
+</div>
+ CHAPTER 7 
+<div class="section-card" id="sec7">
+<h2 class="section-title"><i class="fa-solid fa-tags"></i> Chapter 7: Pricing Intelligence</h2>
+<div class="pricing-grid">
+<div class="chart-box"><canvas id="priceChart"></canvas></div>
+<div class="potential-box">
+<h4><i class="fa-solid fa-star"></i> Most Promising Product Group for Vietnam</h4>
+<p><strong>Bamboo/rattan lampshades</strong> should be the top priority: common Alibaba pricing is around <strong>$4.50 - $15.10/pcs</strong>, with MOQ usually starting from <strong>50 pcs</strong>, matching Vietnam’s handcraft strengths and allowing differentiation through design, lighting effect, size, weave color and OEM for hotel/home decor buyers.</p>
+<br/>
+<p>The <strong>storage basket, tray and bamboo/rattan box category</strong> still offers strong volume potential, with prices around <strong>$2.40 - $6.00/pcs</strong>, suitable for generating bulk inquiries but facing stronger price competition.</p>
+</div>
+</div>
+<h3 class="sub-title">Key Alibaba Sub-Categories &amp; Reference Price Ranges</h3>
+<div class="table-container">
+<table>
+<thead><tr><th>Sub-Category</th><th>Reference Price Range on Alibaba</th><th>Typical MOQ</th><th>Implication for Vietnamese Sellers</th></tr></thead>
+<tbody>
+<tr><td>Rattan/Bamboo Lampshade &amp; Pendant Lamp</td><td>$4.50 - $15.10/pcs</td><td>50 pcs</td><td>Highest potential: higher value, OEM-friendly, suitable for decor and project buyers.</td></tr>
+<tr><td>Storage Basket / Laundry Basket / Bamboo Box</td><td>$2.40 - $6.00/pcs</td><td>50 - 100 pcs</td><td>Strong volume, suitable for retail chains and e-commerce.</td></tr>
+<tr><td>Seagrass / Rattan Tote Bag &amp; Handbag</td><td>$7.89 - $9.98/pcs</td><td>100 pcs</td><td>Suitable for summer fashion buyers; strong samples and private branding are important.</td></tr>
+<tr><td>Tray / Gift Basket / Home Decor Basket</td><td>$5.13 - $9.68/pcs</td><td>50 pcs</td><td>Easy to bundle as gift/home decor sets, with better margin than basic baskets.</td></tr>
+<tr><td>Small Rattan Furniture / Rack / Plant Stand</td><td>$15 - $30/pcs</td><td>100 pcs</td><td>Higher order value, but packaging and logistics must be tightly controlled.</td></tr>
+</tbody>
+</table>
+</div>
+<p style="font-size:0.82rem;color:#7B8794;">Reference: Alibaba supplier/product pages for bamboo/rattan/seagrass products, checked in July 2026.</p>
+</div>
+ CHAPTER 8 
+<div class="section-card" id="sec8">
+<h2 class="section-title"><i class="fa-solid fa-rocket"></i> Chapter 8: Strategy &amp; Research Notes</h2>
+<p>The 2026 strategy should focus on <strong>higher value + certification + custom design</strong>, instead of competing only on price in basic baskets. Vietnam has advantages in refined hand-weaving, craft-village heritage, flexible OEM capability and natural-material storytelling.</p>
+<div class="strategy-grid">
+<div class="strategy-card"><span class="strategy-no">01</span><h4>Prioritize higher-margin categories</h4><p>Focus on bamboo/rattan lamps, wall decor, trays/gift baskets and fashion rattan bags. These categories can be differentiated through shape, fiber color, weaving pattern, seasonal collections and manageable MOQs.</p></div>
+<div class="strategy-card"><span class="strategy-no">02</span><h4>Strengthen certification &amp; C/O</h4><p>For buyers in the EU, Japan and the U.S., sellers should prepare C/O, material certificates, chemical-control records, packaging processes and traceability files. These help build trust and reduce price pressure.</p></div>
+<div class="strategy-card"><span class="strategy-no">03</span><h4>Package for e-commerce</h4><p>Design packaging to prevent deformation and moisture damage, optimize container space and support online sales. For lamps, mirrors and small furniture, packaging directly affects return rates and buyer reviews.</p></div>
+<div class="strategy-card"><span class="strategy-no">04</span><h4>Build minisites by buyer scenario</h4><p>Do not list products only as isolated items. Organize them by scenarios such as Hotel &amp; Resort, Home Decor Retail, Amazon/Wayfair Seller, Eco Gift Set and Fashion Summer Collection so buyers can understand application value.</p></div>
+<div class="strategy-card"><span class="strategy-no">05</span><h4>Tiered pricing strategy</h4><p>Use basic baskets/trays to attract inquiry volume, then upsell to lampshades, gift sets, decor sets and OEM collections to increase AOV. Pricing should clearly separate sample price, FOB bulk price and custom design fee.</p></div>
+<div class="strategy-card"><span class="strategy-no">06</span><h4>Sell through visual content</h4><p>Images should include lifestyle scenes, size comparisons, close-ups of weaving, packaging photos, container/loading shots and craft-village process videos. Handicrafts need to sell through visual trust.</p></div>
+</div>
+<div class="highlight strategy-highlight">
+<strong>Conclusion:</strong> Vietnam should position itself around “premium handmade + sustainable material + OEM design”. The highest-priority product group is <strong>rattan/bamboo lampshades</strong> at around <strong>$4.50 - $15.10/pcs</strong>, then expand into <strong>storage baskets/gift baskets</strong> at around <strong>$2.40 - $9.68/pcs</strong> to maintain both inquiry volume and profit margin.
+</div>
+<div class="research-notes">
+<h3><i class="fa-solid fa-magnifying-glass-chart"></i> Research Notes - Official Sources &amp; Working Links</h3>
+<div class="table-container">
+<table class="source-table">
+<thead><tr><th>Source</th><th>Information Used in the Report</th><th>Link</th></tr></thead>
+<tbody>
+<tr><td>Vietnam Customs</td><td>Periodic export statistics, including “bamboo, rattan, sedge and carpet products”.</td><td><a href="https://files.customs.gov.vn/CustomsCMS/TONG_CUC/2025/6/6/2025-t5k2-1x%28vn-sb%29.pdf" rel="noopener" target="_blank">Open Customs PDF</a></td></tr>
+<tr><td>Vietnam Ministry of Industry and Trade</td><td>Insights on C/O, origin certification and opportunities for handicrafts in premium markets.</td><td><a href="https://moit.gov.vn/tin-tuc/thi-truong-nuoc-ngoai/c-o-ho-chieu-dua-hang-thu-cong-my-nghe-viet-vao-thi-truong-cao-cap.html" rel="noopener" target="_blank">Open MOIT Article</a></td></tr>
+<tr><td>WTO Center and Integration - VCCI</td><td>EVFTA-related information supporting handicrafts and craft villages entering the EU market.</td><td><a href="https://trungtamwto.vn/hiep-dinh-khac/17142-hiep-dinh-evfta-be-phong-cho-cac-san-pham-lang-nghe-ha-noi" rel="noopener" target="_blank">Open WTO Source</a></td></tr>
+<tr><td>WTO Center and Integration - VCCI</td><td>FTA context and market expansion opportunities for bamboo, rattan, sedge and carpet products.</td><td><a href="https://trungtamwto.vn/chuyen-de/20171-ftas-co-hoi-vang-de-mo-rong-thi-truong-xuat-khau-san-pham-may-tre-coi-tham" rel="noopener" target="_blank">Open FTA Feature</a></td></tr>
+<tr><td>Alibaba.com Supplier Pages</td><td>Reference for actual sub-categories and price ranges of bamboo/rattan/seagrass products.</td><td><a href="https://www.alibaba.com/bamboo-handicraft-products-suppliers.html" rel="noopener" target="_blank">Open Alibaba Category</a></td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<footer>
+<div class="footer-grid">
+<div class="footer-brand-block">
+<div class="footer-logo"><i class="fa-solid fa-leaf"></i><span>B2B Market Report</span></div>
+<p>Vietnam Bamboo &amp; Rattan Handicraft Export Analysis Report 2026.</p>
+</div>
+<div class="footer-contact-card">
+<h3>Contact Consultant</h3>
+<p class="fc-name">Amy Đỗ</p>
+<a class="footer-action" href="mailto:hongthom.do@alibaba-inc.com?subject=Alibaba.com%20Handicraft%20Export%20Report%202026%20-%20English"><i class="fa-solid fa-envelope"></i><span>hongthom.do@alibaba-inc.com</span></a>
+<a class="footer-action" href="tel:0946648466"><i class="fa-solid fa-phone"></i><span>0946648466</span></a>
+</div>
+</div>
+<div class="foot-bottom"><span>© 2026 Alibaba B2B Expert. All rights reserved.</span><span>Language: English (EN)</span></div>
+</footer>
+</div>
+<script>
+    function initChart(canvasId, config) {
+      var canvas = document.getElementById(canvasId); if (!canvas) return null;
+      config.options = config.options || {}; 
+      config.options.responsive = true; 
+      config.options.maintainAspectRatio = false;
+      config.options.layout = config.options.layout || { padding: 12 };
+      config.options.plugins = config.options.plugins || {};
+      config.options.plugins.legend = Object.assign({ position: 'bottom', labels: { boxWidth: 18, padding: 18, font: { size: 12, family: 'Lexend' } } }, config.options.plugins.legend || {});
+      config.options.plugins.title = Object.assign({ padding: { bottom: 18 }, color: '#002B5B', font: { size: 18, weight: '700', family: 'Lexend' } }, config.options.plugins.title || {});
+      return new Chart(canvas.getContext('2d'), config);
+    }
+    try {
+      initChart('shareChart', { type: 'doughnut', data: { labels: ['China','Vietnam','Indonesia','Others'], datasets: [{ data: [58.5,8.5,5.2,27.8], backgroundColor:['#D4A017','#1F75FE','#27AE60','#E0E6F2'] }] }, options: { plugins: { title: { display: true, text: 'Global Bamboo & Rattan Export Share 2026 (%)', font: {size: 16} } } } });
+      initChart('growthChart', { type: 'line', data: { labels: ['2023','2024','2025','2026*'], datasets: [{ label: 'Vietnam Export Value (USD million)', data: [660,720,850,1100], borderColor: '#1F75FE', tension: 0.3 }] }, options: { plugins: { title: { display: true, text: 'Vietnam Export Value Growth', font: {size: 16} } } } });
+      initChart('exportCountriesChart', { type: 'bar', data: { labels: ['China','Vietnam','Indonesia','Philippines','India'], datasets: [{ label: 'Export Share (%)', data: [58.5,8.5,5.2,2.1,1.8], backgroundColor: '#27AE60' }] }, options: { indexAxis: 'y', plugins: { title: { display: true, text: 'Top 5 Exporting Countries (2026)', font: {size: 16} } } } });
+      initChart('importCountriesChart', { type: 'bar', data: { labels: ['United States','Netherlands','Germany','Japan','United Kingdom'], datasets: [{ label: 'Import Share (%)', data: [36.2,10.5,8.3,7.1,5.4], backgroundColor: '#D4A017' }] }, options: { indexAxis: 'y', plugins: { title: { display: true, text: 'Top 5 Destination Markets (2026)', font: {size: 16} } } } });
+      initChart('priceChart', { type: 'bar', data: { labels: ['Bamboo/Rattan Lamps','Storage Baskets','Seagrass/Rattan Bags','Trays/Gift Baskets','Small Rattan Furniture'], datasets: [{ label: 'Lowest Price (USD)', data: [4.5,2.4,7.89,5.13,15], backgroundColor: '#E0E6F2' },{ label: 'Highest Price (USD)', data: [15.1,6,9.98,9.68,30], backgroundColor: '#1F75FE' }] }, options: { scales: { y: { beginAtZero: true, ticks: { callback: value => '$' + value } } }, plugins: { title: { display: true, text: 'Reference Price Ranges of Key Alibaba Sub-Categories', font: {size: 18} } } } });
+    } catch(e) { console.error(e); }
+  </script>
+</body>
+</html>
